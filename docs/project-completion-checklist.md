@@ -8,7 +8,7 @@ This checklist reflects the agreed portfolio demonstration scope. The applicatio
 - [x] Confirm the GitHub Actions regression workflow succeeds on `main` (November 24, 2026; commit `9ecdbfe6bf3885bbc4a379bee36ca77264c3e1a0`).
 - [ ] Align remaining documentation and portfolio wording with the local-demo-only scope.
 - [ ] Add genuine screenshots under `docs/demo/screenshots/`.
-- [ ] Add a compressed real screen recording under `docs/demo/` or link a GitHub-hosted video asset.
+- [x] Add the real screen recording under `docs/demo/` and link it from the README (November 24, 2026).
 - [ ] Finalize documentation after local verification and expanded evaluation.
 
 ## B. Requires the owner's development Mac
@@ -30,7 +30,8 @@ This checklist reflects the agreed portfolio demonstration scope. The applicatio
 - [ ] Restart and repeat the workflow; record errors, latency and resource usage.
 - [x] Run and verify the complete Streamlit workflow using the synthetic demo resume, including Qwen3 analysis and readable supporting evidence (November 24, 2026).
 - [x] Capture seven genuine application screenshots using the synthetic candidate (November 24, 2026); final cropped JPGs are saved under `docs/demo/screenshots/`. Public release review is still required.
-- [ ] Record and review the actual local application walkthrough.
+- [x] Record the actual local application walkthrough and publish the MP4 in `docs/demo/` (November 24, 2026; 3:21, 2880 × 1800, H.264/AAC).
+- [ ] Review the published MP4 playback and audio on desktop and mobile.
 - [ ] Keep personal resumes, private information and unrelated desktop content out of captures.
 
 ## C. Evaluation and technical quality
@@ -45,7 +46,7 @@ This checklist reflects the agreed portfolio demonstration scope. The applicatio
 ## D. GitHub and recruiter-facing presentation
 
 - [ ] Add real screenshots and concise captions to the repository.
-- [ ] Add the real screen-recording video or a durable GitHub-hosted video link.
+- [x] Add the real screen-recording video to GitHub and link it from the README (November 24, 2026).
 - [ ] Make the README lead recruiters to the screenshot gallery and video.
 - [ ] Verify assets and links from a signed-out browser session.
 - [ ] Update the portfolio case study with real screenshot previews and video/repository links.
