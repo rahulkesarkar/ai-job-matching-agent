@@ -178,9 +178,11 @@ These are preliminary results from one synthetic candidate profile and a limited
 
 ## 11. Automated Testing
 
-Latest full test result:
+Historical full test result from an earlier repository snapshot:
 
 92 passed, 5 warnings.
+
+This result must be rerun against the current repository head before it is presented as current verification.
 
 Coverage includes:
 - Resume parsing and profiling.
@@ -227,7 +229,7 @@ Other limitations:
 
 ## 14. Recruiter Demonstration
 
-The intended recruiter experience is a recorded walkthrough of the actual locally running Streamlit application, supported by genuine screenshots and the public GitHub source. A continuously hosted public inference service is not required for this portfolio milestone.
+The intended recruiter experience is a recorded walkthrough of the actual locally running Streamlit application, supported by genuine screenshots and the public GitHub source. The application is not yet deployed as a public service. The deployment requirement, hosting architecture and inference constraints must be validated before a hosted demo link is published.
 
 A fictional candidate resume is generated reproducibly with:
 
@@ -238,3 +240,10 @@ python scripts/create_demo_resume.py
 The PDF is generated from `data/sample/demo_candidate_resume.txt` and contains no real candidate data. The recording should show PDF upload, profile extraction, target-role selection, TF-IDF and semantic recommendation views, and selected-job AI analysis. The exact workflow and acceptance checks are documented in `docs/demo-recording-guide.md`.
 
 The demo must preserve important limitations: the job corpus is archived, eligibility rules are heuristic, and skill coverage is not a hiring probability. Only genuine local application output may be shown.
+
+
+## 15. Project completion status
+
+The core local application is implemented, but the project is not complete. The current release gates are fresh local regression and end-to-end verification, expanded relevance evaluation, deployment architecture and security validation, genuine screenshots and recordings, and final portfolio integration.
+
+Use `docs/project-completion-checklist.md` as the evidence-based task tracker. Local execution, screenshots, recordings and resume-PDF approval must not be marked complete based on remote source review.
