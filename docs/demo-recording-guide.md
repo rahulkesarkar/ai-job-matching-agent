@@ -79,14 +79,17 @@ Record actual outcomes, errors, latency and resource usage. Do not mark a check 
 
 ## 5. Screenshot plan
 
-Capture unmodified screenshots from the real running app. Store them under `docs/demo/screenshots/`:
+Seven genuine screenshots were captured from the real local application using the fictional demonstration candidate. The final JPG files are stored under `docs/demo/screenshots/`:
 
-- `01-upload-screen.png` — resume upload and target-role selection.
-- `02-candidate-profile.png` — extracted candidate evidence and eligibility counts.
-- `03-recommendations.png` — retrieval tabs and actual ranked results.
-- `04-ai-job-analysis.png` — selected-job analysis, matched skills, gaps and evidence.
+- `01-resume-upload.jpg` — synthetic resume upload.
+- `02-candidate-profile.jpg` — extracted candidate profile.
+- `03-tfidf-recommendations.jpg` — lexical retrieval results.
+- `04-semantic-recommendations.jpg` — semantic retrieval results.
+- `05-diversified-recommendations.jpg` — diversified semantic results.
+- `06-ai-job-analysis.jpg` — selected-job analysis.
+- `07-supporting-evidence.jpg` — candidate and job evidence.
 
-Use a clean desktop, close unrelated windows and hide notifications. Ensure no personal files, credentials, private browser tabs or real personal data are visible. Do not alter application results.
+Before public release, review the final images for private information, credentials, unrelated desktop content and readability. Do not fabricate or alter application results.
 
 ## 6. Video recording plan
 
@@ -107,7 +110,7 @@ Save a compressed MP4 under `docs/demo/` when practical. Keep the file reasonabl
 
 The repository should make it easy for a recruiter to verify the project:
 
-- `docs/demo/screenshots/` — four genuine application screenshots.
+- `docs/demo/screenshots/` — seven genuine JPG application screenshots.
 - `docs/demo/ai-job-matching-agent-demo.mp4` — compressed real screen recording, or a durable video link referenced from the README.
 - `README.md` — concise demo section linking to the gallery and video.
 - Existing source, tests, architecture, setup, evaluation and limitations documentation.

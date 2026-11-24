@@ -213,3 +213,19 @@ Observed results supplied from the running browser:
 - Supporting evidence was displayed as readable text: candidate evidence (skills, retail analysis project, Power BI dashboard project and fictional education) and job-description evidence (SQL, BI dashboards, Excel reporting and Advanced Excel requirements).
 
 This is a successful, manually observed synthetic-resume end-to-end run and is suitable as the source for the public demonstration once a final clean/restarted run and evidence capture are completed. It is not a claim that current vacancies were found; the corpus remains archived. The private resume must not be included in the public evidence package.
+
+## 16. Seven-screenshot local evidence capture — November 24, 2026
+
+Seven cropped JPG screenshots were captured from the local Streamlit demonstration using the fictional candidate:
+
+1. Resume upload
+2. Candidate profile
+3. TF-IDF recommendations
+4. Semantic recommendations
+5. Diversified recommendations
+6. AI job analysis
+7. Supporting evidence
+
+The final files are stored in `docs/demo/screenshots/` with numbered descriptive filenames. The earlier timestamp-named PNG copies were removed from the project screenshot directory; the Desktop originals were left untouched.
+
+The README gallery, demo recording guide and completion checklist now reflect the seven-image set. The screenshots still require a final privacy and readability review before public release. The real screen recording and portfolio integration remain pending.

@@ -430,3 +430,22 @@ The candidate is fictional and the email uses the reserved `example.invalid` dom
 Follow [the demo recording guide](docs/demo-recording-guide.md) for local setup, acceptance checks, screenshot capture, recording and the GitHub evidence package. After local verification, add genuine screenshots under `docs/demo/screenshots/` and a compressed MP4 or stable video link under `docs/demo/`; link both from this README.
 
 **Demonstration scope:** local PDF upload, profile extraction, target-role selection, TF-IDF and semantic recommendations, diversified results, and selected-job analysis using local Ollama. The job corpus is archived and does not represent verified current vacancies. Keep the local app bound to localhost; public deployment and 24/7 hosting are explicitly out of scope.
+
+
+### Captured application screenshots
+
+These genuine screenshots document the local application workflow using the fictional demonstration candidate.
+
+| Resume upload | Candidate profile |
+|---|---|
+| ![Resume upload](docs/demo/screenshots/01-resume-upload.jpg) | ![Candidate profile](docs/demo/screenshots/02-candidate-profile.jpg) |
+| **TF-IDF recommendations** | **Semantic recommendations** |
+| ![TF-IDF recommendations](docs/demo/screenshots/03-tfidf-recommendations.jpg) | ![Semantic recommendations](docs/demo/screenshots/04-semantic-recommendations.jpg) |
+| **Diversified recommendations** | **AI job analysis** |
+| ![Diversified recommendations](docs/demo/screenshots/05-diversified-recommendations.jpg) | ![AI job analysis](docs/demo/screenshots/06-ai-job-analysis.jpg) |
+
+**Supporting evidence**
+
+![Supporting evidence](docs/demo/screenshots/07-supporting-evidence.jpg)
+
+The real local screen recording will be linked here after it has been recorded and reviewed.

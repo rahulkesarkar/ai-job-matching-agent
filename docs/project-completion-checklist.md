@@ -29,7 +29,7 @@ This checklist reflects the agreed portfolio demonstration scope. The applicatio
 - [x] Verify deterministic fallback when Ollama is unavailable in the live UI; invalid-response fallback is covered by automated tests.
 - [ ] Restart and repeat the workflow; record errors, latency and resource usage.
 - [x] Run and verify the complete Streamlit workflow using the synthetic demo resume, including Qwen3 analysis and readable supporting evidence (November 24, 2026).
-- [ ] Capture the four genuine application screenshots listed in the demo guide.
+- [x] Capture seven genuine application screenshots using the synthetic candidate (November 24, 2026); final cropped JPGs are saved under `docs/demo/screenshots/`. Public release review is still required.
 - [ ] Record and review the actual local application walkthrough.
 - [ ] Keep personal resumes, private information and unrelated desktop content out of captures.
 
