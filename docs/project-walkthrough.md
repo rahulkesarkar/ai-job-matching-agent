@@ -223,3 +223,18 @@ Other limitations:
 - Evaluation is too limited to establish general performance.
 - Archived job postings are not verified open vacancies.
 - Redistribution rights for third-party job descriptions have not been independently established.
+
+
+## 14. Recruiter Demonstration
+
+The intended recruiter experience is a recorded walkthrough of the actual locally running Streamlit application, supported by genuine screenshots and the public GitHub source. A continuously hosted public inference service is not required for this portfolio milestone.
+
+A fictional candidate resume is generated reproducibly with:
+
+```bash
+python scripts/create_demo_resume.py
+```
+
+The PDF is generated from `data/sample/demo_candidate_resume.txt` and contains no real candidate data. The recording should show PDF upload, profile extraction, target-role selection, TF-IDF and semantic recommendation views, and selected-job AI analysis. The exact workflow and acceptance checks are documented in `docs/demo-recording-guide.md`.
+
+The demo must preserve important limitations: the job corpus is archived, eligibility rules are heuristic, and skill coverage is not a hiring probability. Only genuine local application output may be shown.
