@@ -12,7 +12,7 @@ This checklist separates work that can be advanced in the repository from checks
 - [x] Add a reproducible recruiter-demo acceptance and capture guide.
 - [x] Prevent the synthetic PDF generator from saving an overflowing one-page document.
 - [ ] Review all setup instructions against a fresh local installation.
-- [ ] Add or verify automated CI for supported Python/dependency combinations.
+- [x] Add a Python 3.14 GitHub Actions regression workflow; execution result still needs to be observed.
 - [ ] Reassess dependency pins and platform compatibility for the selected deployment target.
 - [ ] Expand evaluation methodology and judgments across multiple candidate profiles.
 - [ ] Complete production security review and implement the required controls.
