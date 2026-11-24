@@ -1,0 +1,10 @@
+original_location,normalized_city,normalized_state,normalized_country,location_type
+Mumbai Metropolitan Region,Mumbai,Maharashtra,India,metropolitan_region
+Greater Kolkata Area,Kolkata,West Bengal,India,metropolitan_area
+Pune/Pimpri-Chinchwad Area,Pune,Maharashtra,India,metropolitan_area
+Greater Bengaluru Area,Bengaluru,Karnataka,India,metropolitan_area
+Greater Ahmedabad Area,Ahmedabad,Gujarat,India,metropolitan_area
+Greater Chennai Area,Chennai,Tamil Nadu,India,metropolitan_area
+Greater Hyderabad Area,Hyderabad,Telangana,India,metropolitan_area
+Greater Jaipur Area,Jaipur,Rajasthan,India,metropolitan_area
+Greater Delhi Area,Delhi,Delhi,India,metropolitan_area

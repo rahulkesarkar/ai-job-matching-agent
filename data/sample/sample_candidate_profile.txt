@@ -1,0 +1,25 @@
+SAMPLE CANDIDATE PROFILE
+Synthetic data for testing the job-matching engine.
+
+Target Roles:
+Junior Data Analyst, Junior Data Scientist,
+Entry-Level Machine Learning Engineer.
+
+Technical Skills:
+Python, SQL, Pandas, NumPy, Scikit-learn,
+Data Cleaning, Exploratory Data Analysis,
+Feature Engineering, Machine Learning,
+Classification, Regression, Model Evaluation,
+Data Visualization, Git and GitHub.
+
+Project Experience:
+Worked on Python-based data analysis and machine
+learning projects. Experience cleaning structured
+datasets, handling missing values, performing
+exploratory data analysis, preparing features,
+training baseline ML models and evaluating results.
+
+Career Preferences:
+Entry-level, full-time opportunities.
+Preferred locations: Mumbai, Pune, Bengaluru,
+Hyderabad and other locations across India.

@@ -33,3 +33,6 @@ data/processed/*
 # IDE
 .vscode/
 .idea/
+
+# Project virtual environments
+.venv*/
