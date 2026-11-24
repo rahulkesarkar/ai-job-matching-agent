@@ -82,59 +82,55 @@ The current completion pass must rerun:
 
 No new local test run, synthetic PDF generation, screenshot capture or screen recording is claimed by this documentation update. These actions require the user's Mac and local runtime.
 
-## 6. Security, reliability and production gaps
+## 6. Security, reliability and demonstration boundary
 
-The local prototype is not yet approved for unrestricted public uploads. Before exposing it to recruiters, assess and implement at minimum:
+The agreed portfolio scope is a local-only application demonstration. Recruiters will inspect the source, genuine screenshots and a recording of the application running locally; they will not upload their own resumes or use a public inference endpoint.
 
-- Authentication or an appropriate abuse-control boundary for public endpoints.
-- Rate limiting and concurrency limits, especially for `/analyze-job`.
-- Request, upload, page-count, parsing-time and inference-time limits.
-- Production CORS allowlist and secure reverse-proxy/TLS configuration.
-- Safe error responses and operational logs that never include resume text or extracted personal data.
-- Secret and environment-variable handling.
-- Health/readiness checks that distinguish application startup from model/index readiness.
-- Resource, latency and failure-recovery tests on the actual hosting target.
+Keep FastAPI and Streamlit bound to localhost during development and recording. Do not expose the current upload or LLM-analysis endpoints to the public internet. Authentication, public API rate limiting, public-service load testing and production TLS/CORS configuration are not completion requirements for this local-only scope.
 
-The parser currently documents a 10 MB upload limit and a 20-page limit. The resume parser processes content in memory rather than persisting the uploaded PDF. These controls do not by themselves make a public upload endpoint production-safe.
+The parser currently documents a 10 MB upload limit and a 20-page limit. Resume content is processed in memory rather than persisted by the resume parser. These protections do not make the current code suitable for unrestricted public exposure. If the product scope changes to a public interactive service, complete a separate security review covering authentication/abuse controls, request and resource limits, safe logging, CORS, TLS, readiness, concurrency and failure recovery.
 
 ## 7. Deployment decision and constraints
 
-The application has **not** been deployed as a publicly usable AI service. The portfolio website being published does not mean the AI application is deployed.
+**Decision: public deployment is explicitly out of scope for the agreed portfolio demonstration.** The user does not want an always-on service that accepts recruiter resume uploads or incurs continuous hosting/inference costs.
 
-The user has asked for deployment, but the exact public-use requirement and acceptable hosting trade-offs still need confirmation. Do not silently substitute a recorded local demo for a requested online application, or promise always-on free inference.
+The intended proof is a reproducible local run captured in a genuine screen recording, supported by genuine screenshots and the public GitHub source. No hosted application URL, uptime claim or public inference endpoint should be added to the portfolio.
 
-Before choosing a host, validate the complete dependency stack on the target OS/architecture: Python 3.14 wheels, PyTorch, Sentence Transformers, FAISS, memory, disk, model download and inference. The job corpus and generated artifacts also need a lawful, reproducible provisioning strategy. Ollama/Qwen3 inference is a separate deployment constraint from hosting FastAPI and Streamlit.
+The local prototype still needs fresh Mac verification. The Apple Silicon development environment and local Ollama/Qwen3 runtime are the target for the demonstration, not a production hosting platform. Any future change to public access would require a new architecture and security decision.
 
 ## 8. Recruiter demonstration package
 
 The repository includes:
 - `data/sample/demo_candidate_resume.txt`: fictional candidate data using the reserved `.invalid` email domain.
 - `scripts/create_demo_resume.py`: creates and validates a one-page A4 PDF.
-- `docs/demo-recording-guide.md`: local setup, acceptance workflow, screenshot plan and recording outline.
+- `docs/demo-recording-guide.md`: local setup, acceptance workflow, screenshot plan, recording outline and GitHub evidence package.
 
-The generated PDF has not yet been executed and verified on the user's Mac in this milestone. Genuine screenshots and recordings must be captured from the running application; never fabricate or recreate application evidence.
+The generated PDF has not yet been executed and verified on the user's Mac. Genuine screenshots and a recording must be captured from the running local application; never fabricate or recreate application evidence.
 
-Planned screenshots:
-- `01-upload-screen.png`
-- `02-candidate-profile.png`
-- `03-recommendations.png`
-- `04-ai-job-analysis.png`
+Planned screenshot files:
+- `docs/demo/screenshots/01-upload-screen.png`
+- `docs/demo/screenshots/02-candidate-profile.png`
+- `docs/demo/screenshots/03-recommendations.png`
+- `docs/demo/screenshots/04-ai-job-analysis.png`
 
-The YouTube presentation is a later deliverable. First stabilize the application and capture genuine evidence for the portfolio.
+The intended video is a compressed recording of the real local end-to-end workflow. The YouTube presentation is a separate later deliverable.
 
 ## 9. Portfolio and remaining user-dependent tasks
 
-The portfolio repository is separate: [rahulkesarkar.github.io](https://github.com/rahulkesarkar/rahulkesarkar.github.io). Its project case-study page already describes the system and local-demo approach. Update it with real screenshots, a demo and a deployment link only after those assets and services exist and have been tested.
+The portfolio repository is separate: [rahulkesarkar.github.io](https://github.com/rahulkesarkar/rahulkesarkar.github.io). Its project case-study page already describes the system and local-demo approach. Update it with real screenshots and the recorded local demo only after those assets exist and have been reviewed. Do not add a deployment link; public hosting is outside the agreed scope.
 
 The homepage resume-download section is intentionally pending until the user confirms the correct, current PDF. Do not publish older resume versions or unconfirmed education details.
 
 ## 10. Next engineering sequence
 
-1. Fresh local regression and integration verification.
-2. Fix issues found and repeat the checks.
-3. Expand relevance evaluation with multiple candidate profiles.
-4. Confirm deployment target and public-use expectations; complete security and runtime validation.
-5. Deploy and independently test the real application if the chosen host supports the full stack.
-6. Capture genuine screenshots and recordings from the verified runtime.
-7. Update README, walkthrough and portfolio with verified evidence.
-8. Obtain the approved resume PDF, add direct-download behavior, and complete recruiter-journey QA.
+1. Complete fresh local regression and API integration verification on the Mac.
+2. Generate and inspect the synthetic one-page resume PDF.
+3. Run the full Streamlit workflow with the local data/index and Ollama; verify deterministic fallback.
+4. Fix issues found and repeat the checks.
+5. Expand relevance evaluation with multiple candidate profiles and document actual results.
+6. Capture genuine screenshots and a screen recording from the verified local application.
+7. Add the screenshot gallery and video to the GitHub repository and README.
+8. Update the portfolio case study with the real evidence and verify the recruiter journey.
+9. Obtain the approved resume PDF, add direct-download behavior, and complete final portfolio QA.
+
+Public deployment, 24/7 uptime and public resume uploads are not completion milestones for this agreed scope.
