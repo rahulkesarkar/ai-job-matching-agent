@@ -38,11 +38,14 @@ def main() -> None:
         align=pymupdf.TEXT_ALIGN_LEFT,
     )
 
+    # Do not write an incomplete PDF if the content does not fit.
+    if remaining_space < 0:
+        document.close()
+        raise ValueError("Synthetic resume text does not fit on one A4 page.")
+
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     document.save(OUTPUT, garbage=4, deflate=True)
     document.close()
-
-    assert remaining_space >= 0, "Synthetic resume text does not fit on one A4 page."
 
     # Re-open the output and verify that it is a readable, single-page PDF.
     with pymupdf.open(OUTPUT) as check:
