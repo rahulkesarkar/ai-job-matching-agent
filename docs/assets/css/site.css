@@ -61,8 +61,15 @@ h1,h2,h3,p{margin-top:0}
 .orbit{position:absolute;border:1px solid var(--line);border-radius:50%;transform:rotate(-26deg)}
 .orbit-one{width:470px;height:300px}
 .orbit-two{width:390px;height:410px;transform:rotate(41deg);border-style:dashed;opacity:.55}
-.profile-panel{position:relative;z-index:1;width:min(100%,390px);min-height:390px;padding:24px;background:linear-gradient(145deg,var(--panel-2),var(--panel));border:1px solid var(--line);box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between}
+.profile-panel{position:relative;z-index:1;width:min(100%,390px);min-height:390px;padding:24px;background:#f2f4ec;color:#17251d;border:1px solid rgba(242,244,236,.85);box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between}
 .panel-topline,.panel-bottomline{display:flex;justify-content:space-between;gap:12px;color:var(--subtle);font:9px "DM Mono",monospace;letter-spacing:.09em}
+/* Warm-white contrast panels: a restrained paper tone against the dark canvas. */
+.profile-panel .panel-topline,.profile-panel .panel-bottomline{color:#748477}
+.profile-panel .micro-label{color:#6c872c}
+.profile-panel .monogram{color:#17251d}
+.profile-panel .monogram span{color:#718f27}
+.profile-panel .profile-caption h2{color:#17251d}
+.profile-panel .profile-caption p{color:#58695d}
 .monogram{font:800 122px/.8 "Manrope",sans-serif;letter-spacing:-.13em;color:var(--text);padding-left:12px}
 .monogram span{color:var(--accent)}
 .profile-caption{max-width:265px;margin-left:auto}
@@ -106,7 +113,7 @@ h1,h2,h3,p{margin-top:0}
 .timeline-index,.edu-index{font:11px "DM Mono",monospace;color:var(--subtle)}
 .education-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .education-card{position:relative;min-height:275px;padding:27px;background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column;align-items:flex-start}
-.education-featured{background:linear-gradient(140deg,var(--panel-2),var(--panel))}
+.education-featured{background:#f2f4ec;border-color:#f2f4ec;color:#17251d}.education-featured .micro-label{color:#6c872c}.education-featured .edu-index{color:#819083}.education-featured h3,.education-featured .edu-speciality{color:#17251d}.education-featured .edu-institution{color:#58695d}.education-featured .edu-result span{color:#738176}.education-featured .edu-result strong{color:#6c872c}
 .edu-top{width:100%;display:flex;align-items:center;justify-content:space-between}
 .education-card h3{margin:30px 0 0;font:800 38px "Manrope",sans-serif;letter-spacing:-.07em}
 .edu-speciality{margin:4px 0 7px;font:600 14px "Manrope",sans-serif}
