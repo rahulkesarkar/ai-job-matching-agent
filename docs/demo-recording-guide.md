@@ -9,7 +9,7 @@ Create a short, factual demonstration of the real locally running AI Job-Matchin
 - Do not imply that archived job postings are currently open vacancies.
 - Do not describe similarity or skill-coverage scores as hiring probabilities.
 - Do not edit, fabricate, or manually alter application results in screenshots.
-- Public always-on hosting is not part of this milestone.
+- Do not claim the app is publicly deployed unless the hosted application has completed a real end-to-end acceptance test. The local recording workflow remains useful while deployment is being validated.
 
 ## 1. Prepare the synthetic PDF
 
@@ -118,3 +118,18 @@ The case-study page should contain:
 - A clear note that this is a locally run demonstration using an archived job corpus, not a live vacancy service.
 
 Test playback, image loading, keyboard access, mobile layout and all links after publication.
+
+
+## 8. Items that require the project owner's local access or decision
+
+These steps are intentionally not marked complete by a remote repository update:
+
+- Run the commands on the development Mac and report the actual outputs.
+- Confirm the locally generated PDF opens and fits on one A4 page.
+- Complete the manual Streamlit and Ollama acceptance workflow.
+- Capture the genuine screenshots and screen recordings from the running application.
+- Confirm the intended deployment experience (public recruiter uploads and inference versus a restricted/recorded demonstration) and acceptable hosting constraints.
+- Approve the current resume PDF before any direct-download link is added to the portfolio.
+- Review and approve the final public portfolio changes and later YouTube presentation.
+
+A remote source review cannot substitute for these machine- and owner-dependent checks.
