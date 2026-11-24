@@ -178,3 +178,10 @@ A local diagnostic used the user's private resume with the explicitly selected t
 - The source rows in this title-matched excluded set were India-classified; country filtering was not the cause of these 16 exclusions.
 
 The counts of exclusion reasons overlap and must not be summed as unique jobs. The current conservative filters were retained; there was no evidence from this single candidate audit to justify loosening the rules. The result exposes a dataset-coverage limitation for the Data Analyst title category and a dependency on potentially imperfect job-platform seniority metadata. The audit is specific to this resume, target role and archived corpus; it does not prove that all classifications are correct.
+
+
+## 13. Streamlit UI consistency correction — November 24, 2026
+
+The live UI showed a 200 MB file-uploader allowance while the application itself enforced a 10 MB limit. The Streamlit uploader now receives `max_upload_size=10`, and both the widget and byte-level validation derive from the shared `MAX_UPLOAD_MB = 10` constant. This prevents the UI from inviting files that the application subsequently rejects. The change uses the supported per-widget Streamlit parameter; local browser re-verification is still pending.
+
+The supporting-evidence expander was also changed to render each candidate and job evidence record using plain-text blocks, with explicit empty-state messages. The local diagnostic found seven non-empty candidate evidence records and four non-empty job evidence records, but the revised presentation must still be checked in the running browser before screenshots are captured.
