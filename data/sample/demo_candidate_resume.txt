@@ -1,7 +1,7 @@
-SYNTHETIC DEMONSTRATION RESUME — FICTIONAL PERSON
+SYNTHETIC DEMONSTRATION RESUME - FICTIONAL PERSON
 Aarav Mehta
 Mumbai, Maharashtra, India
-aarav.mehta@example.invalid | linkedin.com/in/example-profile
+aarav.mehta@example.invalid
 
 PROFILE
 Entry-level data analytics candidate with project-based experience using Python, SQL, spreadsheets and dashboarding to explore structured datasets, identify trends and communicate findings. This resume is entirely fictional and is provided only for demonstrating the AI Job-Matching Agent.
@@ -10,20 +10,20 @@ TECHNICAL SKILLS
 Python, SQL, Microsoft Excel, Power BI, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, data cleaning, exploratory data analysis, descriptive statistics, data visualization, feature engineering, Git and GitHub.
 
 PROJECT EXPERIENCE
-Retail Sales Analysis — Academic Project
+Retail Sales Analysis - Academic Project
 - Cleaned and analyzed a synthetic retail transactions dataset using Python, Pandas and SQL.
 - Investigated missing values, duplicate records, product categories and monthly sales trends.
 - Built a Power BI dashboard to summarize revenue, order volume and category performance.
 - Documented assumptions and presented findings with charts and concise explanations.
 
-Customer Churn Exploration — Academic Project
+Customer Churn Exploration - Academic Project
 - Performed exploratory analysis on a synthetic customer dataset.
 - Prepared features and trained baseline classification models with Scikit-learn.
 - Compared model results using precision, recall and F1-score.
 - Recorded limitations and recommendations for further validation.
 
 EDUCATION
-B.Sc. in Data Analytics — Example Institute (fictional)
+Bachelor of Science (B.Sc.) in Data Analytics - Example Institute (fictional)
 Graduation year: 2025
 
 CAREER PREFERENCES
