@@ -378,6 +378,19 @@ Previously recorded local result (historical):
 
 A fresh GitHub Actions run on November 24, 2026, for commit `9ecdbfe6bf3885bbc4a379bee36ca77264c3e1a0` completed successfully on Python 3.14. The workflow installed dependencies, compiled the application/scripts/tests, and ran the automated regression suite. This verifies the GitHub Ubuntu runner; local Mac end-to-end verification is still required. The earlier local run reported non-blocking SWIG/PyMuPDF deprecation warnings.
 
+## Local Verification
+
+Fresh local verification on November 24, 2026, was performed on Apple Silicon with Python 3.14.3:
+
+- **92 automated tests passed** (5 non-blocking SWIG/PyMuPDF deprecation warnings).
+- FastAPI integration smoke test passed, including actual PDF parsing, candidate profiling, eligibility filtering and all three retrieval methods.
+- The matching engine loaded 2,468 jobs, 10,095 indexed chunks and 384-dimensional embeddings on Apple MPS.
+- Local Ollama analysis passed using `qwen3:4b`.
+- The Streamlit application completed a manual local resume-upload and recommendation workflow.
+- The live UI deterministic fallback was verified during an Ollama outage, and normal Qwen3 analysis was verified after Ollama restarted.
+
+These checks establish that the local prototype ran end to end on the development Mac. They do not establish live-job freshness, broad retrieval quality, production readiness or public availability. The corpus remains archived, and evaluation remains preliminary.
+
 ## Security and Limitations
 
 - Resume PDFs are processed in memory rather than persisted by the resume parser.
