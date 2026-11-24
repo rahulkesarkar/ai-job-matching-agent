@@ -185,3 +185,14 @@ The counts of exclusion reasons overlap and must not be summed as unique jobs. T
 The live UI showed a 200 MB file-uploader allowance while the application itself enforced a 10 MB limit. The Streamlit uploader now receives `max_upload_size=10`, and both the widget and byte-level validation derive from the shared `MAX_UPLOAD_MB = 10` constant. This prevents the UI from inviting files that the application subsequently rejects. The change uses the supported per-widget Streamlit parameter; local browser re-verification is still pending.
 
 The supporting-evidence expander was also changed to render each candidate and job evidence record using plain-text blocks, with explicit empty-state messages. The local diagnostic found seven non-empty candidate evidence records and four non-empty job evidence records, but the revised presentation must still be checked in the running browser before screenshots are captured.
+
+
+## 14. Browser confirmation of Streamlit UI corrections — November 24, 2026
+
+After synchronizing local branch `local-demo-verification` to commit `2355c30`, the user refreshed the actual local Streamlit browser application and confirmed:
+- The resume uploader now displays a 10 MB limit, consistent with the application's 10 MB byte validation.
+- The supporting-evidence expander renders candidate resume evidence and job-description evidence as readable text records. The local diagnostic had counted 7 candidate records and 4 job-description records.
+
+GitHub Actions for commit `2355c30fcaa02aad93fd655c976bf6503b9b5f36` completed successfully on Python 3.14 (regression run 45364348161). The latest code and UI corrections therefore have both successful CI coverage and local browser confirmation.
+
+Still pending before recording: create and inspect the synthetic demo PDF; verify a fresh clean-session run with synthetic data; capture and review four genuine screenshots and one real screen recording; publish and integrate those assets into GitHub and the portfolio.
