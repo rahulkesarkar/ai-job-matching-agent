@@ -1904,3 +1904,21 @@ Date: 2026-11-24
 - Publish the repository after reviewing dataset handling and licensing.
 
 No live job ingestion, OCR, authentication, production deployment or load testing is claimed as implemented.
+
+
+---
+
+## 26. Recruiter Demonstration Scope
+Date: 2026-11-24
+
+### Scope decision
+The portfolio milestone now uses a verified local demonstration rather than a continuously hosted public AI service. This avoids introducing ongoing compute cost, model-serving operations and public resume-upload exposure before those capabilities are necessary.
+
+### Demo assets prepared
+- Added `data/sample/demo_candidate_resume.txt`, containing a clearly synthetic candidate profile.
+- Added `scripts/create_demo_resume.py` to generate and re-open a one-page PDF for the demo.
+- Added `docs/demo-recording-guide.md` with local startup checks, real API smoke-test steps, manual acceptance criteria, screenshot capture plan and a short video outline.
+- Updated the README and technical walkthrough to explain the recorded-demo approach.
+
+### Validation status
+The generator is source-reviewed but has not yet been executed in the user's local Python environment. The real API smoke test, manual Streamlit workflow, screenshot capture and video recording remain pending local execution. No public demo assets are claimed as captured.
