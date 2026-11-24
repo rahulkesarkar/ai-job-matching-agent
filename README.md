@@ -156,6 +156,9 @@ data/
   sample/
 
 docs/
+  demo/
+    ai-job-matching-agent-demo.mp4
+    screenshots/
   engineering-notes.md
   project-walkthrough.md
   relevance-judgment-guidelines.md
@@ -427,7 +430,7 @@ Generate the synthetic candidate resume:
 
 The candidate is fictional and the email uses the reserved `example.invalid` domain. Use only this synthetic resume in public screenshots and recordings.
 
-Follow [the demo recording guide](docs/demo-recording-guide.md) for local setup, acceptance checks, screenshot capture, recording and the GitHub evidence package. After local verification, add genuine screenshots under `docs/demo/screenshots/` and a compressed MP4 or stable video link under `docs/demo/`; link both from this README.
+Follow [the demo recording guide](docs/demo-recording-guide.md) for local setup and reproduction. The [completed 3:21 local application recording](docs/demo/ai-job-matching-agent-demo.mp4) and the genuine screenshot gallery are now published in this repository.
 
 **Demonstration scope:** local PDF upload, profile extraction, target-role selection, TF-IDF and semantic recommendations, diversified results, and selected-job analysis using local Ollama. The job corpus is archived and does not represent verified current vacancies. Keep the local app bound to localhost; public deployment and 24/7 hosting are explicitly out of scope.
 
@@ -448,4 +451,4 @@ These genuine screenshots document the local application workflow using the fict
 
 ![Supporting evidence](docs/demo/screenshots/07-supporting-evidence.jpg)
 
-The real local screen recording will be linked here after it has been recorded and reviewed.
+**Watch the complete local walkthrough (3:21):** [AI Job-Matching Agent demo video](docs/demo/ai-job-matching-agent-demo.mp4). The recording shows the real local application using the fictional demonstration candidate.
