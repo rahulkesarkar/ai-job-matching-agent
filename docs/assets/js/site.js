@@ -1,5 +1,6 @@
 (() => {
   const root = document.documentElement;
+  root.classList.add("js");
   const themeButton = document.querySelector('.theme-toggle');
   const menuButton = document.querySelector('.menu-toggle');
   const mobileNav = document.querySelector('#mobile-nav');
