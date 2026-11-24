@@ -15,15 +15,15 @@ This checklist reflects the agreed portfolio demonstration scope. The applicatio
 
 - [ ] Pull the latest `main` branch.
 - [ ] Generate `data/sample/demo_candidate_resume.pdf` and inspect that it is a complete one-page A4 PDF.
-- [ ] Run the full test suite with `.venv314`.
-- [ ] Run `scripts/smoke_test_api.py`.
-- [ ] Confirm the local dataset, embeddings and FAISS index are present and load correctly.
-- [ ] Start FastAPI and verify `/health`.
-- [ ] Start Streamlit and complete the actual PDF-upload workflow.
-- [ ] Verify candidate profile extraction, eligibility counts and target-role filtering.
-- [ ] Inspect TF-IDF, semantic and diversified recommendations.
-- [ ] Run Qwen3 4B selected-job analysis through local Ollama.
-- [ ] Verify deterministic fallback when Ollama is unavailable or output is invalid.
+- [x] Run the full test suite with `.venv314` (November 24, 2026: 92 passed, 5 non-blocking warnings).
+- [x] Run `scripts/smoke_test_api.py` (November 24, 2026: passed).
+- [x] Confirm the local dataset, embeddings and FAISS index are present and load correctly (2,468 jobs, 10,095 chunks, 384 dimensions).
+- [x] Start/verify FastAPI and `/health` (HTTP 200, matching engine ready).
+- [x] Start Streamlit and complete an actual local PDF-upload workflow (private resume; no public use of its data).
+- [x] Verify candidate profile extraction, eligibility counts and target-role filtering (role-family audit recorded in engineering notes).
+- [x] Inspect TF-IDF, semantic and diversified recommendations (top-five comparison recorded in engineering notes).
+- [x] Run Qwen3 4B selected-job analysis through local Ollama (provider confirmed as `ollama`).
+- [x] Verify deterministic fallback when Ollama is unavailable in the live UI; invalid-response fallback is covered by automated tests.
 - [ ] Restart and repeat the workflow; record errors, latency and resource usage.
 - [ ] Capture the four genuine application screenshots listed in the demo guide.
 - [ ] Record and review the actual local application walkthrough.
