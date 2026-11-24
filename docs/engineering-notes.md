@@ -196,3 +196,20 @@ After synchronizing local branch `local-demo-verification` to commit `2355c30`, 
 GitHub Actions for commit `2355c30fcaa02aad93fd655c976bf6503b9b5f36` completed successfully on Python 3.14 (regression run 45364348161). The latest code and UI corrections therefore have both successful CI coverage and local browser confirmation.
 
 Still pending before recording: create and inspect the synthetic demo PDF; verify a fresh clean-session run with synthetic data; capture and review four genuine screenshots and one real screen recording; publish and integrate those assets into GitHub and the portfolio.
+
+
+## 15. Synthetic-candidate end-to-end demonstration verification — November 24, 2026
+
+The user completed a full manual workflow in the local Streamlit application using the corrected fictional `data/sample/demo_candidate_resume.pdf` for Aarav Mehta, with target roles `Junior Data Analyst` and `Data Analyst Intern`.
+
+Observed results supplied from the running browser:
+- PDF upload and extraction succeeded; one page and 1,712 extracted characters.
+- 14 skills were detected, including Python, SQL, Pandas, NumPy, Scikit-learn, Data Analysis, Data Cleaning, Feature Engineering, Statistics, Data Visualization, Power BI, Excel, Git and GitHub.
+- Fictional Bachelor of Science (B.Sc.) in Data Analytics education evidence was extracted.
+- Five jobs passed eligibility filtering from the 2,468-job corpus; 2,463 were excluded under the documented role, country, seniority, experience and education heuristics.
+- TF-IDF, semantic and diversified recommendation views completed. The top semantic result was Data Analyst Intern at RegisterKaro (similarity 0.6840); scores are method-specific and are not hiring probabilities.
+- Selected-job analysis completed using local `ollama (qwen3:4b)`.
+- Python-calculated required-skill coverage was 4/5 (80%): Excel, SQL, Power BI and Python matched; Tableau was not detected as required. Data Visualization was classified as preferred and detected in the candidate skills.
+- Supporting evidence was displayed as readable text: candidate evidence (skills, retail analysis project, Power BI dashboard project and fictional education) and job-description evidence (SQL, BI dashboards, Excel reporting and Advanced Excel requirements).
+
+This is a successful, manually observed synthetic-resume end-to-end run and is suitable as the source for the public demonstration once a final clean/restarted run and evidence capture are completed. It is not a claim that current vacancies were found; the corpus remains archived. The private resume must not be included in the public evidence package.
