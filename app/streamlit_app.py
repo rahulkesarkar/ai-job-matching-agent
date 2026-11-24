@@ -9,7 +9,8 @@ API_BASE_URL = os.getenv(
     "http://127.0.0.1:8000",
 ).rstrip("/")
 
-MAX_UPLOAD_BYTES = 10 * 1024 * 1024
+MAX_UPLOAD_MB = 10
+MAX_UPLOAD_BYTES = MAX_UPLOAD_MB * 1024 * 1024
 
 
 st.set_page_config(
@@ -255,13 +256,27 @@ def render_job_cards(
                     st.write(analysis["recommendation"])
 
                     with st.expander("Review supporting evidence"):
-                        st.write("**Candidate evidence**")
-                        for item in analysis["candidate_evidence"]:
-                            st.write(f"- {item}")
+                        st.markdown("**Candidate evidence**")
+                        candidate_evidence = analysis.get(
+                            "candidate_evidence", []
+                        )
+                        if candidate_evidence:
+                            for item in candidate_evidence:
+                                st.text(item)
+                        else:
+                            st.caption(
+                                "No candidate evidence records were returned."
+                            )
 
-                        st.write("**Job description evidence**")
-                        for item in analysis["job_evidence"]:
-                            st.write(f"- {item}")
+                        st.markdown("**Job description evidence**")
+                        job_evidence = analysis.get("job_evidence", [])
+                        if job_evidence:
+                            for item in job_evidence:
+                                st.text(item)
+                        else:
+                            st.caption(
+                                "No job-description evidence records were returned."
+                            )
 
                     if analysis["used_fallback"]:
                         st.warning(
@@ -292,7 +307,8 @@ with st.form("resume_matching_form"):
     uploaded_file = st.file_uploader(
         "Upload your resume (PDF)",
         type=["pdf"],
-        help="Maximum file size: 10 MB.",
+        help=f"Maximum file size: {MAX_UPLOAD_MB} MB.",
+        max_upload_size=MAX_UPLOAD_MB,
     )
 
     target_role_input = st.text_input(
