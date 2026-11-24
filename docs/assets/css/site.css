@@ -8,7 +8,7 @@
 [data-theme="light"]{
   color-scheme:light;--bg:#f3f5ef;--bg-soft:#e9eee5;--panel:#fff;--panel-2:#edf2e8;
   --text:#17221d;--muted:#586960;--subtle:#78877d;--line:rgba(22,46,32,.15);
-  --accent:#718f27;--accent-2:#58731c;--ink:#fff;--header:rgba(243,245,239,.88);
+  --accent:#718f27;--accent-2:#58731c;--ink:#111a13;--header:rgba(243,245,239,.88);
   --shadow:0 26px 80px rgba(29,49,35,.10);
 }
 *{box-sizing:border-box}
