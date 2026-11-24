@@ -362,11 +362,13 @@ These results are preliminary and based on one synthetic candidate profile and a
 
 ## Automated Testing
 
-Run the full test suite:
+Run the full test suite locally:
 
 ```bash
 python -m pytest -v
 ```
+
+GitHub Actions also runs the Python 3.14 regression suite on pushes and pull requests targeting `main`. The workflow installs the pinned development dependencies, compiles the application/scripts/tests, and runs the full pytest suite. A configured workflow is not evidence of a passing run; check the latest Actions result for the commit being reviewed.
 
 Previously recorded result (historical; rerun required on the current repository head):
 
