@@ -229,3 +229,9 @@ Seven cropped JPG screenshots were captured from the local Streamlit demonstrati
 The final files are stored in `docs/demo/screenshots/` with numbered descriptive filenames. The earlier timestamp-named PNG copies were removed from the project screenshot directory; the Desktop originals were left untouched.
 
 The README gallery, demo recording guide and completion checklist now reflect the seven-image set. The screenshots still require a final privacy and readability review before public release. The real screen recording and portfolio integration remain pending.
+
+## 17. Local demo video published — November 24, 2026
+
+The completed macOS screen recording was converted from MOV to MP4 using stream copy (no re-encoding), preserving the H.264 video and AAC audio streams. The published file is `docs/demo/ai-job-matching-agent-demo.mp4` (44,646,940 bytes; approximately 43 MiB; 3:21; 2880 × 1800). The original MOV remains on the user's Desktop.
+
+The MP4 has been pushed to the public project repository. The README links to the recording, and the portfolio case study includes an HTML5 video player alongside the seven genuine screenshots. Final playback and audio checks on desktop and mobile remain to be completed.
