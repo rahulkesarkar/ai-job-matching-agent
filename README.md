@@ -370,25 +370,25 @@ python -m pytest -v
 
 GitHub Actions also runs the Python 3.14 regression suite on pushes and pull requests targeting `main`. The workflow installs the pinned development dependencies, compiles the application/scripts/tests, and runs the full pytest suite. A configured workflow is not evidence of a passing run; check the latest Actions result for the commit being reviewed.
 
-Previously recorded result (historical; rerun required on the current repository head):
+Previously recorded local result (historical):
 
 ```text
 92 passed, 5 warnings
 ```
 
-The earlier run reported non-blocking SWIG/PyMuPDF deprecation warnings. Do not treat this as current verification until the suite is rerun.
+A fresh GitHub Actions run on November 24, 2026, for commit `9ecdbfe6bf3885bbc4a379bee36ca77264c3e1a0` completed successfully on Python 3.14. The workflow installed dependencies, compiled the application/scripts/tests, and ran the automated regression suite. This verifies the GitHub Ubuntu runner; local Mac end-to-end verification is still required. The earlier local run reported non-blocking SWIG/PyMuPDF deprecation warnings.
 
 ## Security and Limitations
 
 - Resume PDFs are processed in memory rather than persisted by the resume parser.
 - The default LLM workflow uses local Ollama inference.
 - Resume evidence is selected and redacted before LLM analysis.
-- Authentication and rate limiting are not implemented.
+- This is a local demonstration prototype, not a public resume-upload service; keep development servers bound to localhost.
+- Public-service authentication, rate limiting and load testing are not implemented because always-on public access is outside the agreed scope.
 - OCR for scanned PDFs is not implemented.
 - Resume extraction and eligibility rules are heuristic.
 - Missing explicit skills do not prove that a candidate lacks the capability.
 - The dataset does not represent verified live vacancies.
-- Production deployment and load testing have not been completed.
 - Third-party job-description redistribution rights have not been independently established.
 
 ## Documentation
@@ -404,16 +404,16 @@ A project-level license has not yet been selected. Review the upstream dataset l
 
 ## Recruiter Demonstration
 
-The current implementation is a reproducible local application; a publicly usable deployment has not yet been completed. The deployment target and public-use requirements must be confirmed and the full stack validated before a hosting commitment is made. The recruiter-facing portfolio will also include a recorded walkthrough and genuine screenshots captured from the running application after end-to-end verification.
+The agreed recruiter experience is a polished portfolio case study leading to the public GitHub repository, where recruiters can inspect the source, genuine application screenshots and a recorded video of the **real application running locally**. The application is not intended to be an always-on public service; recruiters do not need to upload their own resumes or access a live backend.
 
-A fully synthetic candidate resume is provided for safe demonstrations:
+Generate the synthetic candidate resume:
 
 ```bash
-python scripts/create_demo_resume.py
+./.venv314/bin/python scripts/create_demo_resume.py
 ```
 
-This creates and verifies `data/sample/demo_candidate_resume.pdf`. The candidate name and details are fictional; the email uses the reserved `example.invalid` domain. Do not substitute a real person's resume in public recordings.
+The candidate is fictional and the email uses the reserved `example.invalid` domain. Use only this synthetic resume in public screenshots and recordings.
 
-Follow [the demo recording guide](docs/demo-recording-guide.md) for environment checks, the FastAPI integration smoke test, the manual Streamlit acceptance workflow, screenshot checklist and video outline.
+Follow [the demo recording guide](docs/demo-recording-guide.md) for local setup, acceptance checks, screenshot capture, recording and the GitHub evidence package. After local verification, add genuine screenshots under `docs/demo/screenshots/` and a compressed MP4 or stable video link under `docs/demo/`; link both from this README.
 
-**Demonstration scope:** local PDF upload, profile extraction, target-role selection, TF-IDF and semantic recommendations, diversified results, and selected-job analysis using local Ollama. The job corpus is archived and does not represent verified current vacancies. Public deployment, including the hosting and inference architecture, remains an open project milestone; do not describe the app as deployed until a real hosted workflow has been tested.
+**Demonstration scope:** local PDF upload, profile extraction, target-role selection, TF-IDF and semantic recommendations, diversified results, and selected-job analysis using local Ollama. The job corpus is archived and does not represent verified current vacancies. Keep the local app bound to localhost; public deployment and 24/7 hosting are explicitly out of scope.

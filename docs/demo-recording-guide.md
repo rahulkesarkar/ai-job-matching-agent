@@ -1,135 +1,143 @@
 # Recruiter Demo Recording Guide
 
-## Purpose and presentation rules
+## Purpose and agreed demonstration scope
 
-Create a short, factual demonstration of the real locally running AI Job-Matching Agent. The recording and screenshots must come from the actual Streamlit application after a fresh end-to-end check.
+The recruiter experience is a polished portfolio and a public GitHub repository containing source code, genuine screenshots and a video of the **real application running locally**.
 
-- Use only the synthetic candidate resume in `data/sample/demo_candidate_resume.pdf`.
-- Do not upload or expose Rahul's personal resume or another real person's resume.
-- Do not imply that archived job postings are currently open vacancies.
-- Do not describe similarity or skill-coverage scores as hiring probabilities.
-- Do not edit, fabricate, or manually alter application results in screenshots.
-- Do not claim the app is publicly deployed unless the hosted application has completed a real end-to-end acceptance test. The local recording workflow remains useful while deployment is being validated.
+The AI application is intentionally not an always-on public service. Recruiters are not expected to upload their own resumes or use the backend themselves. No continuously running server or public LLM inference endpoint is required.
 
-## 1. Prepare the synthetic PDF
+The recording must show a real successful run of the actual Streamlit application. Do not use mock screens, fabricated results, static mock-ups or generated images as evidence of application behavior.
 
-From the repository root, with the project virtual environment active:
+## 1. Safe demonstration data
+
+Use only the synthetic candidate resume in `data/sample/demo_candidate_resume.pdf`.
+
+Generate it from the repository root:
 
 ```bash
-python scripts/create_demo_resume.py
+./.venv314/bin/python scripts/create_demo_resume.py
 ```
 
-The script creates and re-opens a one-page PDF at:
-
-`data/sample/demo_candidate_resume.pdf`
-
-The candidate is fictional. The email uses the reserved `example.invalid` domain.
+Open the PDF and verify that it is a complete one-page A4 document. The candidate is fictional; the email uses the reserved `example.invalid` domain. Do not use a personal resume or another real person's resume in public screenshots or video.
 
 ## 2. Verify the local environment
 
-Confirm that the required prepared artifacts exist locally. Raw data, processed datasets, embeddings and the FAISS index are intentionally not committed to Git; follow the README's dataset preparation steps if they are absent.
+```bash
+./.venv314/bin/python -m pytest -v
+./.venv314/bin/python scripts/smoke_test_api.py
+```
 
-Confirm Ollama is available and the configured model is installed:
+Confirm that the locally prepared data, embeddings and FAISS index are present. They are intentionally excluded from Git and must be provisioned using the README instructions if missing.
+
+Check Ollama and the configured model:
 
 ```bash
 ollama list
 ```
 
-The default model is `qwen3:4b`. Start Ollama if it is not already running.
+The default model is `qwen3:4b`. Start Ollama locally before the primary AI-analysis recording.
 
-Run the recorded regression suite:
-
-```bash
-python -m pytest -v
-```
-
-Run the real FastAPI integration smoke test:
-
-```bash
-python scripts/smoke_test_api.py
-```
-
-The smoke test checks API startup, PDF upload, candidate extraction, actual matching, eligibility counters and result lists. It does not replace the separate manual Streamlit and LLM-analysis walkthrough.
-
-## 3. Start the application
-
-Load the local environment variables in each terminal session as described in the README.
+## 3. Start the application locally
 
 Terminal 1 — FastAPI:
 
 ```bash
-python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+set -a
+source .env
+set +a
+./.venv314/bin/python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
 
 Terminal 2 — Streamlit:
 
 ```bash
-streamlit run app/streamlit_app.py --server.address 127.0.0.1 --server.port 8501
+set -a
+source .env
+set +a
+./.venv314/bin/python -m streamlit run app/streamlit_app.py --server.address 127.0.0.1 --server.port 8501
 ```
 
-Check `http://127.0.0.1:8000/health` and open `http://127.0.0.1:8501`.
+Verify `http://127.0.0.1:8000/health` and open `http://127.0.0.1:8501`.
 
-## 4. Manual end-to-end acceptance checklist
+Keep the application bound to `127.0.0.1`. Do not expose the development server to the public internet for this demonstration.
+
+## 4. End-to-end acceptance checklist
 
 1. Upload `data/sample/demo_candidate_resume.pdf`.
 2. Enter `Junior Data Analyst` as the target role.
 3. Submit the form and wait for processing to finish.
 4. Inspect the extracted candidate profile and recognized skills.
-5. Confirm the eligible and excluded job counts are visible and plausible.
+5. Confirm eligible and excluded job counts are visible and plausible.
 6. Review TF-IDF, semantic and diversified recommendation tabs.
-7. Inspect the returned job titles and metadata; do not imply archived jobs are currently open.
-8. In the diversified recommendations, choose one returned job and select **Analyze this job with local AI**.
-9. Wait for Qwen3 analysis; inspect matched skills, skill gaps, evidence and recommendation.
-10. Confirm any fallback notice is visible if the local LLM is unavailable or returns invalid output.
-11. Repeat once after a clean app restart to confirm the workflow is reproducible.
+7. Inspect actual job titles and metadata. The corpus is archived; do not imply jobs are currently open.
+8. Select a returned job and choose **Analyze this job with local AI**.
+9. Wait for Qwen3 analysis and inspect skill matches, gaps, evidence and recommendation.
+10. Confirm fallback behavior when Ollama is unavailable or returns invalid output.
+11. Restart the services and repeat the core workflow to confirm reproducibility.
 
-Record the actual outcome, including errors and latency. Do not mark the checklist complete until it has been performed on the local machine.
+Record actual outcomes, errors, latency and resource usage. Do not mark a check complete until it has been performed on the local machine.
 
-## 5. Screenshot capture plan
+## 5. Screenshot plan
 
-Capture unmodified screenshots from the running app:
+Capture unmodified screenshots from the real running app. Store them under `docs/demo/screenshots/`:
 
-- `01-upload-screen.png` — upload and target-role form.
+- `01-upload-screen.png` — resume upload and target-role selection.
 - `02-candidate-profile.png` — extracted candidate evidence and eligibility counts.
-- `03-recommendations.png` — recommendation tabs and actual ranked results.
-- `04-ai-job-analysis.png` — selected-job analysis, skill matches, gaps and evidence.
+- `03-recommendations.png` — retrieval tabs and actual ranked results.
+- `04-ai-job-analysis.png` — selected-job analysis, matched skills, gaps and evidence.
 
-Before capture, close unrelated windows, hide notifications and ensure no personal files or browser tabs are visible. Keep the app's real content and status messages intact.
+Use a clean desktop, close unrelated windows and hide notifications. Ensure no personal files, credentials, private browser tabs or real personal data are visible. Do not alter application results.
 
-## 6. Video outline (approximately 2–3 minutes)
+## 6. Video recording plan
 
-- 0:00–0:15 — State the problem and what the prototype demonstrates.
+Create a polished 2–3 minute, 16:9 screen recording of the actual local application:
+
+- 0:00–0:15 — Problem statement and what the prototype demonstrates.
 - 0:15–0:40 — Upload the synthetic PDF and select the target role.
-- 0:40–1:05 — Show the extracted candidate profile and eligibility filtering.
+- 0:40–1:05 — Show the extracted profile and eligibility filtering.
 - 1:05–1:40 — Compare TF-IDF, semantic and diversified recommendations.
-- 1:40–2:20 — Analyze one selected job and explain the evidence, matched skills and gaps.
-- 2:20–2:40 — Close with the architecture and GitHub repository.
+- 1:40–2:20 — Analyze one selected job and explain matched skills, gaps and evidence.
+- 2:20–2:40 — Close with the architecture, limitations and GitHub repository.
 
-Use a 16:9 desktop capture, readable browser zoom, clean audio and no unnecessary terminal output. Do not speed through loading states or conceal failures. If analysis uses deterministic fallback, explain that honestly.
+Keep text readable and audio clear. Show genuine loading and processing states. Do not conceal failures or imply a result was live when it was not. If the LLM falls back to deterministic output, explain that honestly.
 
-## 7. Portfolio integration acceptance
+Save a compressed MP4 under `docs/demo/` when practical. Keep the file reasonably sized for GitHub (preferably below 50 MB); if the recording is larger, use a GitHub-hosted video asset or another stable link from the README rather than committing an oversized binary.
 
-The case-study page should contain:
+## 7. GitHub evidence package
 
-- A playable video hosted from a stable public video URL or a repository asset.
-- A small gallery of the genuine screenshots.
-- Captions explaining what each screen demonstrates.
-- A visible GitHub source link.
-- A clear note that this is a locally run demonstration using an archived job corpus, not a live vacancy service.
+The repository should make it easy for a recruiter to verify the project:
 
-Test playback, image loading, keyboard access, mobile layout and all links after publication.
+- `docs/demo/screenshots/` — four genuine application screenshots.
+- `docs/demo/ai-job-matching-agent-demo.mp4` — compressed real screen recording, or a durable video link referenced from the README.
+- `README.md` — concise demo section linking to the gallery and video.
+- Existing source, tests, architecture, setup, evaluation and limitations documentation.
 
+Add short captions explaining what each screenshot demonstrates. Verify all assets and links from a signed-out browser session.
 
-## 8. Items that require the project owner's local access or decision
+## 8. Portfolio integration
 
-These steps are intentionally not marked complete by a remote repository update:
+After the evidence is real and committed:
 
-- Run the commands on the development Mac and report the actual outputs.
-- Confirm the locally generated PDF opens and fits on one A4 page.
-- Complete the manual Streamlit and Ollama acceptance workflow.
-- Capture the genuine screenshots and screen recordings from the running application.
-- Confirm the intended deployment experience (public recruiter uploads and inference versus a restricted/recorded demonstration) and acceptable hosting constraints.
-- Approve the current resume PDF before any direct-download link is added to the portfolio.
-- Review and approve the final public portfolio changes and later YouTube presentation.
+- Link the project case study to the GitHub repository.
+- Add selected screenshots with useful captions.
+- Embed or link the actual screen recording.
+- Clearly state that the app runs locally for the recorded demonstration and is not a public resume-upload service.
+- Retain archived-job-corpus and evaluation caveats.
+- Test desktop/mobile layout, image loading, video playback, keyboard access and every link.
 
-A remote source review cannot substitute for these machine- and owner-dependent checks.
+## 9. Later presentation
+
+The YouTube presentation is a separate later deliverable. Reuse the verified screen recording and technical narrative only after local acceptance and the repository evidence package are complete.
+
+## 10. Owner-dependent work
+
+These steps require the owner's Mac or approved assets and cannot be completed by editing repository documentation remotely:
+
+- Run the local commands and provide actual test output.
+- Generate and inspect the synthetic one-page PDF.
+- Complete the manual Streamlit and Ollama workflow.
+- Capture genuine screenshots and a real screen recording.
+- Review and approve the public evidence.
+- Approve the correct current resume PDF before adding a homepage download.
+
+A repository update or CI pass is not a substitute for these local checks.

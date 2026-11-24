@@ -216,8 +216,8 @@ Not implemented:
 - Live job-feed ingestion.
 - OCR for scanned resumes.
 - User accounts and persistent candidate history.
-- Authentication and rate limiting.
-- Production deployment and load testing.
+- Authentication and rate limiting for a public service (public access is outside the agreed local-demo scope).
+- Production deployment and load testing (not required for the agreed portfolio demonstration).
 
 Other limitations:
 - Eligibility and resume extraction are rule-based.
@@ -226,24 +226,28 @@ Other limitations:
 - Archived job postings are not verified open vacancies.
 - Redistribution rights for third-party job descriptions have not been independently established.
 
+The application should remain bound to localhost for the demonstration; do not expose the upload or inference endpoints publicly.
 
 ## 14. Recruiter Demonstration
 
-The intended recruiter experience is a recorded walkthrough of the actual locally running Streamlit application, supported by genuine screenshots and the public GitHub source. The application is not yet deployed as a public service. The deployment requirement, hosting architecture and inference constraints must be validated before a hosted demo link is published.
+The intended recruiter experience is a polished portfolio leading to the public GitHub repository. The repository will contain the source code, genuine screenshots of the actual Streamlit application and a screen-recording video of the **real application running locally**.
 
-A fictional candidate resume is generated reproducibly with:
+The application is intentionally not an always-on public service. Recruiters are not expected to upload their own resumes or access a live backend. No public hosting or 24/7 inference is required.
+
+Generate the synthetic candidate resume with:
 
 ```bash
-python scripts/create_demo_resume.py
+./.venv314/bin/python scripts/create_demo_resume.py
 ```
 
-The PDF is generated from `data/sample/demo_candidate_resume.txt` and contains no real candidate data. The recording should show PDF upload, profile extraction, target-role selection, TF-IDF and semantic recommendation views, and selected-job AI analysis. The exact workflow and acceptance checks are documented in `docs/demo-recording-guide.md`.
+The candidate is fictional and uses a reserved `.invalid` email. The recording should show PDF upload, profile extraction, target-role selection, TF-IDF and semantic recommendation views, diversified results and selected-job AI analysis through local Ollama. Store genuine screenshots in `docs/demo/screenshots/` and the compressed recording or durable video link under `docs/demo/`.
 
-The demo must preserve important limitations: the job corpus is archived, eligibility rules are heuristic, and skill coverage is not a hiring probability. Only genuine local application output may be shown.
-
+The demo must preserve important limitations: the job corpus is archived, eligibility rules are heuristic, and skill coverage is not a hiring probability.
 
 ## 15. Project completion status
 
-The core local application is implemented, but the project is not complete. The current release gates are fresh local regression and end-to-end verification, expanded relevance evaluation, deployment architecture and security validation, genuine screenshots and recordings, and final portfolio integration.
+The core local application is implemented. GitHub Actions completed a successful Python 3.14 regression run on November 24, 2026, but fresh local Mac verification and full end-to-end acceptance are still required.
+
+Remaining gates for the agreed portfolio scope are local verification, expanded evaluation, genuine screenshots, a real screen recording, GitHub evidence integration and final portfolio recruiter-journey QA. A public service deployment is not required.
 
 Use `docs/project-completion-checklist.md` as the evidence-based task tracker. Local execution, screenshots, recordings and resume-PDF approval must not be marked complete based on remote source review.
