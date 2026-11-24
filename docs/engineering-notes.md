@@ -164,3 +164,17 @@ These counts are diagnostic, not relevance labels or evidence that every result 
 - The private resume's education extraction was not fully reconciled with the user's confirmed education details. Do not use its profile in public screenshots or recording. Use the approved synthetic demonstration resume for public evidence.
 
 Still not verified: synthetic PDF generation and inspection; local API fallback from malformed model output in the live UI (unit tests cover invalid output); a full app restart-and-repeat test; final evidence rendering; four genuine screenshots; screen recording; repository/portfolio evidence integration. These remain open until actually performed.
+
+
+## 12. Focused Data Analyst eligibility audit — November 24, 2026
+
+A local diagnostic used the user's private resume with the explicitly selected target role `Junior Data Analyst`. The resume content was not published. Among the 2,468 semantic-eligible source jobs:
+
+- 21 job titles matched the Data Analyst title category.
+- 5 passed all candidate eligibility filters.
+- 16 were excluded.
+- 14 of the excluded title matches carried a senior/leadership classification under the current title/seniority heuristic.
+- Other overlapping exclusion reasons included explicit experience requirements from 2 to 9 years. Some jobs violated both seniority and experience rules.
+- The source rows in this title-matched excluded set were India-classified; country filtering was not the cause of these 16 exclusions.
+
+The counts of exclusion reasons overlap and must not be summed as unique jobs. The current conservative filters were retained; there was no evidence from this single candidate audit to justify loosening the rules. The result exposes a dataset-coverage limitation for the Data Analyst title category and a dependency on potentially imperfect job-platform seniority metadata. The audit is specific to this resume, target role and archived corpus; it does not prove that all classifications are correct.
