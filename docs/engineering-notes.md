@@ -134,3 +134,33 @@ The homepage resume-download section is intentionally pending until the user con
 9. Obtain the approved resume PDF, add direct-download behavior, and complete final portfolio QA.
 
 Public deployment, 24/7 uptime and public resume uploads are not completion milestones for this agreed scope.
+
+
+## 11. Fresh local verification milestone — November 24, 2026
+
+The user ran the current local application on an Apple Silicon Mac using Python 3.14.3 and the `.venv314` environment. The following evidence was supplied from actual local execution:
+
+- Full pytest suite: **92 passed, 0 failed, 5 non-blocking SWIG/PyMuPDF deprecation warnings**, 8.40 seconds.
+- `scripts/smoke_test_api.py`: passed. FastAPI initialized the matching engine; `/health` returned ready; PDF extraction, upload, candidate skills, target-role propagation, real matching, eligibility counters and all three recommendation result lists passed.
+- Runtime artifacts loaded: 2,468 semantic-eligible jobs, 10,095 indexed chunks, 384-dimensional embeddings; model device was `mps:0`.
+- Local Ollama integration: `scripts/smoke_test_llm_analysis.py` completed successfully using `qwen3:4b`, with `provider=ollama` and no fallback.
+- FastAPI `/health` returned HTTP 200 with `matching_engine_ready=true`. Streamlit's `/_stcore/health` endpoint also returned HTTP 200.
+- Manual Streamlit run using a private resume: PDF upload and extraction completed; 11 skills were detected; the selected role was Junior Data Analyst; the UI displayed the three retrieval lists and selected-job analysis. Do not store or publish the private resume or its personal details.
+- Manual retrieval comparison: the first five results were identical across TF-IDF, semantic and diversified semantic ranking for this candidate. The similarity scores are method-specific and must not be compared across methods as though they shared a scale.
+- Manual local-LLM outage test: Ollama was stopped while the app remained running. Selected-job analysis completed using the disclosed deterministic fallback. Ollama was then restarted; a fresh analysis again reported `ollama (qwen3:4b)`.
+- Eligibility audit for the private resume and Junior Data Analyst role: 5 eligible and 2,463 excluded from 2,468 source jobs. Exclusion-reason counts overlap because one job may violate multiple rules. A role-family sensitivity diagnostic returned:
+
+| Target role family | Title matches | Eligible at 1 year | Eligible at 2 years | Eligible at 3 years |
+|---|---:|---:|---:|---:|
+| Data Analyst | 21 | 5 | 5 | 5 |
+| Data Scientist | 27 | 5 | 5 | 7 |
+| Machine Learning Engineer | 25 | 5 | 7 | 13 |
+| All three families | 70 | 14 | 16 | 24 |
+
+These counts are diagnostic, not relevance labels or evidence that every result is suitable. Do not loosen the default experience threshold merely to inflate result volume. Keep recruiter demo claims scoped to the explicitly selected roles and describe limited corpus coverage honestly.
+
+- Evidence-generation diagnostic found 7 non-empty candidate evidence records and 4 non-empty job evidence records for the selected RegisterKaro posting. The actual text display in the Streamlit expander has not yet been visually confirmed; inspect it before final screenshots.
+- The upload widget displayed Streamlit's 200 MB default, while the application has a 10 MB client-side limit. Align the displayed/configured limit before recording.
+- The private resume's education extraction was not fully reconciled with the user's confirmed education details. Do not use its profile in public screenshots or recording. Use the approved synthetic demonstration resume for public evidence.
+
+Still not verified: synthetic PDF generation and inspection; local API fallback from malformed model output in the live UI (unit tests cover invalid output); a full app restart-and-repeat test; final evidence rendering; four genuine screenshots; screen recording; repository/portfolio evidence integration. These remain open until actually performed.
