@@ -2,13 +2,13 @@
   color-scheme:dark;
   --bg:#0a1111;--bg-soft:#0d1717;--panel:#101d1c;--panel-2:#142321;
   --text:#edf2e9;--muted:#9baaa2;--subtle:#667a71;--line:rgba(212,235,219,.13);
-  --accent:#c8f169;--accent-2:#a7cf58;--ink:#0a1111;--header:rgba(10,17,17,.84);
+  --accent:#c8f169;--accent-button:#c8f169;--accent-2:#a7cf58;--ink:#0a1111;--button-hover-ink:#0a1111;--header:rgba(10,17,17,.84);
   --shadow:0 26px 80px rgba(0,0,0,.28);--radius:4px;
 }
 [data-theme="light"]{
   color-scheme:light;--bg:#f3f5ef;--bg-soft:#e9eee5;--panel:#fff;--panel-2:#edf2e8;
-  --text:#17221d;--muted:#586960;--subtle:#78877d;--line:rgba(22,46,32,.15);
-  --accent:#718f27;--accent-2:#58731c;--ink:#111a13;--header:rgba(243,245,239,.88);
+  --text:#17221d;--muted:#586960;--subtle:#626f65;--line:rgba(22,46,32,.15);
+  --accent:#58721e;--accent-button:#718f27;--accent-2:#58731c;--ink:#111a13;--button-hover-ink:#fff;--header:rgba(243,245,239,.88);
   --shadow:0 26px 80px rgba(29,49,35,.10);
 }
 *{box-sizing:border-box}
@@ -50,8 +50,8 @@ h1,h2,h3,p{margin-top:0}
 .hero-cta{display:flex;align-items:center;gap:28px;margin-top:32px}
 .button{min-height:48px;padding:0 20px;display:inline-flex;gap:18px;align-items:center;justify-content:center;font:700 12px "DM Sans",sans-serif;transition:transform .2s,background .2s,color .2s}
 .button:hover{transform:translateY(-2px)}
-.button-primary{background:var(--accent);color:var(--ink)}
-.button-primary:hover{background:var(--accent-2);color:#fff}
+.button-primary{background:var(--accent-button,var(--accent));color:var(--ink)}
+.button-primary:hover{background:var(--accent-2);color:var(--button-hover-ink,var(--ink))}
 .text-link{font-size:12px;font-weight:600;color:var(--text);border-bottom:1px solid var(--line);padding-bottom:5px}
 .text-link span{color:var(--accent);margin-left:5px}
 .hero-meta{display:flex;align-items:center;gap:13px;margin-top:44px;color:var(--muted);font:10px "DM Mono",monospace;letter-spacing:.04em}
@@ -64,10 +64,10 @@ h1,h2,h3,p{margin-top:0}
 .profile-panel{position:relative;z-index:1;width:min(100%,390px);min-height:390px;padding:24px;background:#f2f4ec;color:#17251d;border:1px solid rgba(242,244,236,.85);box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between}
 .panel-topline,.panel-bottomline{display:flex;justify-content:space-between;gap:12px;color:var(--subtle);font:9px "DM Mono",monospace;letter-spacing:.09em}
 /* Warm-white contrast panels: a restrained paper tone against the dark canvas. */
-.profile-panel .panel-topline,.profile-panel .panel-bottomline{color:#748477}
-.profile-panel .micro-label{color:#6c872c}
+.profile-panel .panel-topline,.profile-panel .panel-bottomline{color:#58695d}
+.profile-panel .micro-label{color:var(--accent)}
 .profile-panel .monogram{color:#17251d}
-.profile-panel .monogram span{color:#718f27}
+.profile-panel .monogram span{color:var(--accent)}
 .profile-panel .profile-caption h2{color:#17251d}
 .profile-panel .profile-caption p{color:#58695d}
 .monogram{font:800 122px/.8 "Manrope",sans-serif;letter-spacing:-.13em;color:var(--text);padding-left:12px}
@@ -113,7 +113,7 @@ h1,h2,h3,p{margin-top:0}
 .timeline-index,.edu-index{font:11px "DM Mono",monospace;color:var(--subtle)}
 .education-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .education-card{position:relative;min-height:275px;padding:27px;background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column;align-items:flex-start}
-.education-featured{background:#f2f4ec;border-color:#f2f4ec;color:#17251d}.education-featured .micro-label{color:#6c872c}.education-featured .edu-index{color:#819083}.education-featured h3,.education-featured .edu-speciality{color:#17251d}.education-featured .edu-institution{color:#58695d}.education-featured .edu-result span{color:#738176}.education-featured .edu-result strong{color:#6c872c}
+.education-featured{background:#f2f4ec;border-color:#f2f4ec;color:#17251d}.education-featured .micro-label{color:var(--accent)}.education-featured .edu-index{color:#58695d}.education-featured h3,.education-featured .edu-speciality{color:#17251d}.education-featured .edu-institution{color:#58695d}.education-featured .edu-result span{color:#58695d}.education-featured .edu-result strong{color:var(--accent)}
 .edu-top{width:100%;display:flex;align-items:center;justify-content:space-between}
 .education-card h3{margin:30px 0 0;font:800 38px "Manrope",sans-serif;letter-spacing:-.07em}
 .edu-speciality{margin:4px 0 7px;font:600 14px "Manrope",sans-serif}
