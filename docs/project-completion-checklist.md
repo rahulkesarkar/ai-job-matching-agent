@@ -34,7 +34,7 @@ This checklist reflects the agreed portfolio demonstration scope. The applicatio
 - [ ] Expand relevance judgments beyond the current 31 reviewed postings and one synthetic candidate profile.
 - [ ] Evaluate multiple candidate profiles, role families and experience levels.
 - [ ] Recalculate Precision@5, Precision@10, Recall@10 (with scope stated), MRR and NDCG@10.
-- [ ] Inspect false positives, false negatives and eligibility-filter exclusions.
+- [x] Inspect Data Analyst eligibility-filter exclusions for the local demonstration candidate (21 title matches, 5 eligible, 16 excluded; detailed scope and overlapping reasons documented).
 - [ ] Document the limits of the archived dataset and heuristic rules.
 - [ ] Review setup instructions against a fresh local environment.
 
