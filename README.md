@@ -184,11 +184,10 @@ tests/
 ### 1. Clone the repository
 
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
+git clone https://github.com/rahulkesarkar/ai-job-matching-agent.git
 cd ai-job-matching-agent
 ```
 
-Replace the placeholder with the repository URL after publishing it.
 
 ### 2. Create an environment
 
