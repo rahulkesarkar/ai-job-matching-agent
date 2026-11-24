@@ -398,3 +398,20 @@ The warnings are non-blocking SWIG/PyMuPDF deprecation warnings.
 ## License
 
 A project-level license has not yet been selected. Review the upstream dataset licensing and third-party content redistribution rights before publishing data artifacts.
+
+
+## Recruiter Demonstration
+
+The project is presented as a reproducible local application, not a continuously hosted public service. The recruiter-facing portfolio will include a recorded walkthrough and genuine screenshots captured from the running Streamlit interface after end-to-end verification.
+
+A fully synthetic candidate resume is provided for safe demonstrations:
+
+```bash
+python scripts/create_demo_resume.py
+```
+
+This creates and verifies `data/sample/demo_candidate_resume.pdf`. The candidate name and details are fictional; the email uses the reserved `example.invalid` domain. Do not substitute a real person's resume in public recordings.
+
+Follow [the demo recording guide](docs/demo-recording-guide.md) for environment checks, the FastAPI integration smoke test, the manual Streamlit acceptance workflow, screenshot checklist and video outline.
+
+**Demonstration scope:** local PDF upload, profile extraction, target-role selection, TF-IDF and semantic recommendations, diversified results, and selected-job analysis using local Ollama. The job corpus is archived and does not represent verified current vacancies. Public always-on hosting is a separate future decision.
