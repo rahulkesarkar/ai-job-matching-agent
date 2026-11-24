@@ -368,13 +368,13 @@ Run the full test suite:
 python -m pytest -v
 ```
 
-Latest verified result:
+Previously recorded result (historical; rerun required on the current repository head):
 
 ```text
 92 passed, 5 warnings
 ```
 
-The warnings are non-blocking SWIG/PyMuPDF deprecation warnings.
+The earlier run reported non-blocking SWIG/PyMuPDF deprecation warnings. Do not treat this as current verification until the suite is rerun.
 
 ## Security and Limitations
 
@@ -402,7 +402,7 @@ A project-level license has not yet been selected. Review the upstream dataset l
 
 ## Recruiter Demonstration
 
-The project is presented as a reproducible local application, not a continuously hosted public service. The recruiter-facing portfolio will include a recorded walkthrough and genuine screenshots captured from the running Streamlit interface after end-to-end verification.
+The current implementation is a reproducible local application; a publicly usable deployment has not yet been completed. The deployment target and public-use requirements must be confirmed and the full stack validated before a hosting commitment is made. The recruiter-facing portfolio will also include a recorded walkthrough and genuine screenshots captured from the running application after end-to-end verification.
 
 A fully synthetic candidate resume is provided for safe demonstrations:
 
@@ -414,4 +414,4 @@ This creates and verifies `data/sample/demo_candidate_resume.pdf`. The candidate
 
 Follow [the demo recording guide](docs/demo-recording-guide.md) for environment checks, the FastAPI integration smoke test, the manual Streamlit acceptance workflow, screenshot checklist and video outline.
 
-**Demonstration scope:** local PDF upload, profile extraction, target-role selection, TF-IDF and semantic recommendations, diversified results, and selected-job analysis using local Ollama. The job corpus is archived and does not represent verified current vacancies. Public always-on hosting is a separate future decision.
+**Demonstration scope:** local PDF upload, profile extraction, target-role selection, TF-IDF and semantic recommendations, diversified results, and selected-job analysis using local Ollama. The job corpus is archived and does not represent verified current vacancies. Public deployment, including the hosting and inference architecture, remains an open project milestone; do not describe the app as deployed until a real hosted workflow has been tested.
